@@ -1,0 +1,108 @@
+body {
+  background-color: #7d3120;
+  color: #ffcba6;
+  font-family: "Creepster", cursive;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+h1 {
+  font-size: 4em;
+  margin-top: 50px;
+}
+
+p {
+  font-size: 1.5em;
+}
+
+.ghost {
+  position: absolute;
+  width: 150px;
+  opacity: 0.8;
+  animation: float 6s ease-in-out infinite;
+}
+
+.ghost-1 {
+  top: 20%;
+  left: 10%;
+  animation-duration: 5s;
+  animation-direction: alternate-reverse;
+}
+
+.ghost-2 {
+  top: 60%;
+  left: 70%;
+  animation-duration: 8s;
+  animation-direction: alternate;
+}
+
+.ghost-3 {
+  top: 40%;
+  right: 10%;
+  animation-duration: 7s;
+  animation-direction: alternate;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(15px, -30px);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  75% {
+    transform: translate(-15px, -30px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.door-link {
+  display: inline-block;
+  margin-top: 50px;
+  padding: 15px 30px;
+  font-size: 1.5em;
+  color: #fff;
+  background-color: #ff0000;
+  border: none;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+  transition: all 0.3s ease;
+}
+
+.door-link:hover {
+  box-shadow: 0 0 20px #ff0000, 0 0 40px #ff1a1a, 0 0 60px #ff1a1a;
+  transform: scale(1.1);
+}
+
+#bat {
+  position: absolute;
+}
+
+.fog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("fog.png") repeat;
+  opacity: 0.5;
+  pointer-events: none;
+  animation: moveFog 30s infinite linear;
+}
+
+@keyframes moveFog {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
